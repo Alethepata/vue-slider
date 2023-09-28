@@ -21,19 +21,37 @@
 
                 <div class="items-wrapper w-100 h-100 ">
 
-                  <div class="item w-100 h-100 position-relative" v-for="image in images">
-                      <img :src="image.image" class= " object-fit-cover w-100 h-100 ">
+                  <div 
+                  class="item w-100 h-100 position-relative" 
+                  v-for="image in images"
+                  >
+
+                      <img 
+                      :src="image.image" 
+                      class= " object-fit-cover w-100 h-100 "
+                      >
+
                        <div class="text-content">
+
                           <h1>{{image.title}}</h1>
                           <p class="fs-4">{{image.text}}</p>
+
                        </div>
+
                   </div>
                     
                 </div>
 
                 <div class="thumb w-25 position-relative">
 
+                    <img 
+                    v-for="image in images" 
+                    class="filter second-item" 
+                    :src="image.image"
+                    >
+
                 </div>
+
 
                 <div class="arrow top  fs-3">
                     <i class="fa-solid fa-chevron-up"></i>
