@@ -22,8 +22,9 @@
                 <div class="items-wrapper w-100 h-100 ">
 
                   <div 
-                  class="item w-100 h-100 position-relative" 
-                  v-for="image in images"
+                  class="  w-100 h-100 position-relative" 
+                  v-for="(image, index) in images"
+                  :class="{'d-none': index !== counter}"
                   >
 
                       <img 
@@ -45,20 +46,24 @@
                 <div class="thumb w-25 position-relative">
 
                     <img 
-                    v-for="image in images" 
-                    class="filter second-item" 
+                    class="filter second-item"
+                    v-for="(image, index) in images" 
+                    @click="counter = index"
+                    :class="{'active': index === counter}"
                     :src="image.image"
                     >
 
                 </div>
 
-
-                <div class="arrow top  fs-3">
+                <div @click="nextPrev(false)" 
+                class="arrow top  fs-3"
+                >
                     <i class="fa-solid fa-chevron-up"></i>
+    
                 </div>
-                <div class="arrow bottom  fs-3">
+                <div @click="nextPrev(true)" class="arrow bottom  fs-3">
                     <i class="fa-solid fa-chevron-down"></i>
-                </div> 
+                </div>
 
             </div>
 
