@@ -34,7 +34,11 @@ createApp({
         nextPrev(isNext){
             
             isNext ? this.counter++ : this.counter--;
+            this.loop();
             
+
+        },
+        loop(){
             if(this.counter === this.images.length){
                 this.counter = 0;
             }else if(this.counter < 0){
@@ -43,7 +47,10 @@ createApp({
         }
     },
     mounted(){
-        
+        setInterval(()=>{
+            this.counter++
+            this.loop()
+        }, 3000)
     }
 
 }).mount('#app')
