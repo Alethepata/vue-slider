@@ -22,7 +22,7 @@
                 <div class="items-wrapper w-100 h-100 ">
 
                   <div 
-                  class="  w-100 h-100 position-relative" 
+                  class="w-100 h-100 position-relative" 
                   v-for="(image, index) in images"
                   :class="{'d-none': index !== counter}"
                   >
@@ -32,7 +32,7 @@
                       class= " object-fit-cover w-100 h-100 "
                       >
 
-                       <div class="text-content">
+                       <div class="text-content rounded-5 m-2">
 
                           <h1>{{image.title}}</h1>
                           <p class="fs-4">{{image.text}}</p>
